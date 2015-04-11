@@ -1,0 +1,14 @@
+<section ng-controller="registrationController">
+    <h1>{{page.title}}</h1>
+    <p>This is the registration page...{{students.length}}</p>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        <tr ng-repeat="student in students">
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+        </tr>
+    </table>
+</section>

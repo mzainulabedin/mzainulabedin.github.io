@@ -1,0 +1,6 @@
+D:\Development\MyProjects\dotNet\Projects\EasyStitch\Expremental\EasyStitch\simple\bin\simple.dll.config
+D:\Development\MyProjects\dotNet\Projects\EasyStitch\Expremental\EasyStitch\simple\bin\simple.dll
+D:\Development\MyProjects\dotNet\Projects\EasyStitch\Expremental\EasyStitch\simple\bin\simple.pdb
+D:\Development\MyProjects\dotNet\Projects\EasyStitch\Expremental\EasyStitch\simple\obj\Debug\simple.csprojResolveAssemblyReference.cache
+D:\Development\MyProjects\dotNet\Projects\EasyStitch\Expremental\EasyStitch\simple\obj\Debug\simple.dll
+D:\Development\MyProjects\dotNet\Projects\EasyStitch\Expremental\EasyStitch\simple\obj\Debug\simple.pdb

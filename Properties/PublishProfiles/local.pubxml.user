@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Live\simple</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/simple.dll">
+      <publishTime>04/11/2015 08:29:24</publishTime>
+    </File>
+    <File Include="config/app.js">
+      <publishTime>04/10/2015 16:59:36</publishTime>
+    </File>
+    <File Include="config/bootstrap.js">
+      <publishTime>04/10/2015 15:08:30</publishTime>
+    </File>
+    <File Include="config/routes.js">
+      <publishTime>04/10/2015 19:25:54</publishTime>
+    </File>
+    <File Include="controllers/aboutController.js">
+      <publishTime>04/10/2015 17:23:11</publishTime>
+    </File>
+    <File Include="controllers/contactController.js">
+      <publishTime>04/10/2015 17:23:35</publishTime>
+    </File>
+    <File Include="controllers/homeController.js">
+      <publishTime>04/10/2015 17:23:54</publishTime>
+    </File>
+    <File Include="controllers/registrationController.js">
+      <publishTime>04/10/2015 19:26:21</publishTime>
+    </File>
+    <File Include="css/app.css">
+      <publishTime>04/10/2015 16:32:53</publishTime>
+    </File>
+    <File Include="css/bootstrap-responsive.min.css">
+      <publishTime>04/09/2015 13:19:45</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>04/09/2015 13:19:45</publishTime>
+    </File>
+    <File Include="css/sticky-footer.css">
+      <publishTime>04/09/2015 13:19:49</publishTime>
+    </File>
+    <File Include="directives/app-color.js">
+      <publishTime>04/09/2015 13:19:48</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>04/10/2015 21:59:40</publishTime>
+    </File>
+    <File Include="img/glyphicons-halflings-white.png">
+      <publishTime>04/09/2015 13:19:45</publishTime>
+    </File>
+    <File Include="img/glyphicons-halflings.png">
+      <publishTime>04/09/2015 13:19:45</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>04/10/2015 22:01:40</publishTime>
+    </File>
+    <File Include="scripts/angular-route.js">
+      <publishTime>04/03/2015 16:54:24</publishTime>
+    </File>
+    <File Include="scripts/angular.js">
+      <publishTime>04/09/2015 12:52:04</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.min.js">
+      <publishTime>04/09/2015 13:19:46</publishTime>
+    </File>
+    <File Include="scripts/jquery-2.1.3.js">
+      <publishTime>04/03/2015 15:36:18</publishTime>
+    </File>
+    <File Include="scripts/require.js">
+      <publishTime>04/09/2015 12:52:04</publishTime>
+    </File>
+    <File Include="services/dependencyResolverFor.js">
+      <publishTime>04/10/2015 17:20:15</publishTime>
+    </File>
+    <File Include="services/registrationService.js">
+      <publishTime>04/10/2015 19:26:37</publishTime>
+    </File>
+    <File Include="views/about.html">
+      <publishTime>04/10/2015 17:26:30</publishTime>
+    </File>
+    <File Include="views/contact.html">
+      <publishTime>04/10/2015 17:26:42</publishTime>
+    </File>
+    <File Include="views/home.html">
+      <publishTime>04/10/2015 17:27:01</publishTime>
+    </File>
+    <File Include="views/registration/list.html">
+      <publishTime>04/10/2015 17:26:20</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/09/2015 12:49:56</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
