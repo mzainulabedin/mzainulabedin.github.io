@@ -212,3 +212,5 @@ _Pvt_Extensions/
 ModelManifest.xml
 =======
 >>>>>>> c332b854aff1082196bfb48da0589f0a98e285a0
+/obj
+/bin
