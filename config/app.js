@@ -1,4 +1,5 @@
-define(['routes','../services/dependencyResolverFor'], function(config, dependencyResolverFor)
+'use strict';
+define(['routes', '../services/dependencyResolverFor'], function (config, dependencyResolverFor)
 {
     var app = angular.module('app', ['ngRoute']);
 

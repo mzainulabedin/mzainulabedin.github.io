@@ -1,4 +1,5 @@
-define([], function()
+'use strict';
+define([], function ()
 {
     return {
         defaultRoutePath: '/',
@@ -7,11 +8,18 @@ define([], function()
                 templateUrl: '/views/home.html',
 				controller: 'controllers/homeController'
             },
-            '/registration': {
-                templateUrl: '/views/registration/list.html',
-                controller: 'controllers/registrationController',
+            '/item': {
+                templateUrl: '/views/item/list.html',
+                controller: 'controllers/itemController',
                 dependencies: [
-                    'services/registrationService'
+                    'services/itemService'
+                ]
+            },
+            '/item/:id': {
+                templateUrl: '/views/item/view.html',
+                controller: 'controllers/itemController',
+                dependencies: [
+                    'services/itemService'
                 ]
             },
             '/about/:person': {

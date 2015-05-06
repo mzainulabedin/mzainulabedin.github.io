@@ -8,6 +8,12 @@
     padding-top:50px;
 }
 
+@media screen and (min-width: 700px) {
+  .collapes{
+      display:none!important;
+  }
+}
+
 .container .credit
 {
     margin: 20px 0;
@@ -37,4 +43,16 @@ table tr:nth-child(odd) {
 }
 table tr:nth-child(even) {
   background-color: #ffffff;
+}
+
+form.form-inline div.form-group label{
+    min-width: 100px;
+    font-weight:bold;
+    margin-right:20px;
+}
+
+
+.validation-error, .validation-error span, .validation-error div{
+    color: #ce3535;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
