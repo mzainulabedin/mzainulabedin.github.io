@@ -13,20 +13,20 @@
         <div class="form-group">
             <label for="txtName">Name:</label>
             <input id="txtName" name="txtName" type="text" ng-model="item.name" required ng-minlength="3" />
-            <span role="alert" class="validation-error" ng-show="form.$submitted || form.txtCode.$touched">
-                <span ng-show="form.txtCode.$error.required">Required!</span>
-                <span ng-show="form.txtCode.$error.minlength">At least 3 charactors</span>
+            <span role="alert" class="validation-error" ng-show="form.$submitted || form.txtName.$touched">
+                <span ng-show="form.txtName.$error.required">Required!</span>
+                <span ng-show="form.txtName.$error.minlength">At least 3 charactors</span>
             </span>
         </div>
         <div class="form-group">
-            <label for="txtType">Type:</label>
+            <label for="ddlType">Type:</label>
             <select id="ddlType" name="ddlType" ng-model="item.type" required>
                 <option value="">[Please Select]</option>
                 <option>Cloth</option>
                 <option>Thread</option>
             </select>
-            <span role="alert" class="validation-error" ng-show="form.$submitted || form.txtCode.$touched">
-                <span ng-show="form.txtCode.$error.required">Required!</span>
+            <span role="alert" class="validation-error" ng-show="form.$submitted || form.ddlType.$touched">
+                <span ng-show="form.ddlType.$error.required">Required!</span>
             </span>
         </div>
         <div class="form-group">
@@ -40,6 +40,7 @@
         <button class="btn" ng-click="delete()">Delete</button>
         <input type="submit" class="btn btn-default" value="Save"
                ng-disabled="form.txtCode.$dirty && form.txtCode.$invalid ||
-                form.txtName.$dirty && form.txtName.$invalid" />
+                form.txtName.$dirty && form.txtName.$invalid ||
+               form.ddltype.$dirty && form.ddltype.$invalid" />
     </form>
 </section>
