@@ -1,9 +1,9 @@
-define(['app'], function(app)
+define(['app'], function (app)
 {
+    
     app.controller('aboutController',
     [
         '$scope',
-
         function($scope)
         {
             $scope.page =

@@ -1,4 +1,11 @@
 <section ng-controller="aboutController">
     <h1 app-color="blue">{{page.title}}</h1>
     <p>This is the 'about us' page</p>
+
+    <div ng-click="count = count + 1" ng-init="count=0">
+        Increment
+    </div>
+    <span>
+        count: {{count}}
+    </span>
 </section>

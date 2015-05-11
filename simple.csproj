@@ -38,13 +38,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="404.html" />
+    <Content Include="common\data-utils.js" />
     <Content Include="controllers\itemController.js" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\38.gif" />
+    <Content Include="scripts\angular-animate.min.js" />
+    <Content Include="scripts\angular-loader.min.js" />
+    <Content Include="scripts\angular-touch.min.js" />
+    <Content Include="scripts\ui-bootstrap-tpls-0.13.0.js" />
     <Content Include="index.html" />
     <Content Include="css\bootstrap-responsive.min.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="scripts\angular-route.min.js" />
+    <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\angular-route.js" />
     <Content Include="scripts\angular.js" />
@@ -55,8 +69,10 @@
     <Content Include="controllers\homeController.js" />
     <Content Include="directives\app-color.js" />
     <Content Include="scripts\jquery-2.1.3.js" />
+    <Content Include="scripts\npm.js" />
     <Content Include="scripts\require.js" />
     <Content Include="config\routes.js" />
+    <Content Include="scripts\ui-bootstrap-tpls-0.13.0.min.js" />
     <Content Include="services\dependencyResolverFor.js" />
     <Content Include="css\app.css" />
     <Content Include="css\sticky-footer.css" />
@@ -72,7 +88,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="LICENSE" />
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
+    <Content Include="README.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

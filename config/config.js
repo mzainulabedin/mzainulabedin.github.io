@@ -4,31 +4,33 @@ require.config({
     paths: {
 		'angular': '/scripts/angular',
 		'angular-route': '/scripts/angular-route',
-		'bootstrap': '/scripts/bootstrap.min',
-		'jquery': '/scripts/jquery-2.1.3',
+		'ui-bootstrap': '/scripts/ui-bootstrap-tpls-0.13.0.min',
+		'angular-animate': '/scripts/angular-animate.min',
+		'data-utils': '/common/data-utils',
         'app': '/config/app',
         'routes': '/config/routes'
     },
 	shim: {
 		'app': {
-			deps: ['angular', 'angular-route', 'bootstrap']
+		    deps: ['angular', 'angular-route', 'ui-bootstrap', 'angular-animate', 'data-utils']
 		},
 		'angular-route': {
 			deps: ['angular']
 		},
-		'bootstrap': {
-			deps: ['jquery']
+		'ui-bootstrap': {
+		    deps: ['angular', 'angular-animate']
+		},
+		'angular-animate': {
+		    deps: ['angular']
 		}
 	}
 });
 
 require
 (
-    [
-        'app'
-    ],
+    ['app'],
     function(app)
     {
-        angular.bootstrap(document, ['app']);
+        angular.bootstrap(document, ['ngAnimate', 'ui.bootstrap', 'app']);
     }
 );

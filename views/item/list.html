@@ -1,33 +1,51 @@
 <section ng-controller="itemController">
-    <h1>{{page.title}}</h1>
-    
-    <p>This is the item page...</p>
+    <h2 ng-click="alert('hi');">{{page.title}}<img src="img/38.gif" ng-show="loading"></h2>
     <p class="{{message.messageClass}}">{{message.text}}</p>
-
-    <a href="/item/new">New</a>
-    <table>
-        <caption>            
-        </caption>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="item in items">
-                <td>{{ item.code }}</td>
-                <td>{{ item.name }}</td>
-                <td><a href="/item/{{ item._id }}">Edit</a></td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="3">
-                    Total: {{items.length}}
-                </td>
-            </tr>             
-        </tfoot>        
-    </table>
+    <div>
+        <div class="panel panel-default">
+            <div class="panel-heading" ng-click="isCollapsed = !isCollapsed">
+                <h4 class="panel-title">
+                    List of Items
+                </h4>
+            </div>
+            <div collapse="isCollapsed">
+                <div class="panel-body">
+                    <pre>Sorted by '{{sort.active}}' with descending = {{sort.descending}}</pre>
+                    <hr />
+                    <a href="/item/new">New</a>
+                    <table style="width:98%;">
+                        <caption>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th style="min-width:100px;" ng-click="changeSorting('code')">
+                                    Code
+                                    <span class="glyphicon" ng-class="getIcon('code')"></span>
+                                </th>
+                                <th style="min-width:200px;" ng-click="changeSorting('name')">
+                                    Name
+                                    <span class="glyphicon" ng-class="getIcon('name')"></span>
+                                </th>
+                                <th style="min-width:100px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in items | orderBy:sort.active:sort.descending">
+                                <td>{{ item.code }}</td>
+                                <td>{{ item.name }}</td>
+                                <td><a href="/item/{{ item._id }}">Edit</a></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">
+                                    Total: {{items.length}}
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

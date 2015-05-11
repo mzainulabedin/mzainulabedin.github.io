@@ -8,12 +8,6 @@
     padding-top:50px;
 }
 
-@media screen and (min-width: 700px) {
-  .collapes{
-      display:none!important;
-  }
-}
-
 .container .credit
 {
     margin: 20px 0;
@@ -33,19 +27,25 @@ textarea {
 }
 
 table, th , td {
-  border: 1px solid grey;
+  border: 1px solid #e7e7e7;
   border-collapse: collapse;
+  padding-top: 3px;
+  padding-bottom: 3px;
   padding-left: 5px;
   padding-right: 5px;
 }
 table tr:nth-child(odd) {
-  background-color: #f2f2f2;
+  background-color: #f7f7f7;
 }
 table tr:nth-child(even) {
   background-color: #ffffff;
 }
+table th {
+  background-color: #5599cc;
+  color:#ffffff;
+}
 
-form.form-inline div.form-group label{
+form.form-horizontal div.form-group label{
     min-width: 100px;
     font-weight:bold;
     margin-right:20px;
@@ -56,3 +56,10 @@ form.form-inline div.form-group label{
     color: #ce3535;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
+
+form div{
+    margin-top:10px;
+}
+
+
+
