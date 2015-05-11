@@ -25,10 +25,36 @@ define(['app'], function (app) {
                 $scope.loading = true;
                 $scope.predicate = 'name';
                 $scope.reverse = false;
+                $scope.itemPerPage = 4;
+
+                $scope.setPage = function (pageNo) {
+                    $scope.currentPage = pageNo;
+                };
+
+                $scope.pageChanged = function () {
+                    var from = 0;
+                    if ($scope.currentPage >= 1)
+                        from = ($scope.currentPage - 1) * $scope.itemPerPage;
+
+                    var to = $scope.itemPerPage;
+                    if ($scope.currentPage * $scope.itemPerPage <= $scope.allItems.length)
+                        to = $scope.currentPage * $scope.itemPerPage;
+                    else
+                        to = $scope.allItems.length;
+
+                    $scope.items = $scope.allItems.slice(from, to);
+                    //$log.log('Page changed to: ' + $scope.currentPage);
+                };
+
                 service.getList()
                 .success(function (data, status, headers, config) {
-                    $scope.items = data;
+                    $scope.allItems = data;
+                    if ($scope.allItems.length > $scope.itemPerPage) {
+                        $scope.items = $scope.allItems.slice(0, $scope.itemPerPage);
+                    }
                     $scope.loading = $scope.isCollapsed = false;
+                    $scope.totalItems = $scope.allItems.length;
+                    $scope.currentPage = 1;
                 })
                 .error(function (data, status, headers, config) {
                     setMessage(data, 'error', data.errors);

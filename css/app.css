@@ -26,6 +26,8 @@ textarea {
     max-width: 280px;
 }
 
+/* table -----------------------------------------------------*/
+
 table, th , td {
   border: 1px solid #e7e7e7;
   border-collapse: collapse;
@@ -40,10 +42,15 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
   background-color: #ffffff;
 }
-table th {
-  background-color: #5599cc;
-  color:#ffffff;
+table thead th {
+  background-color: #FCF4E5;
+  border-bottom-color:black;
 }
+table tfoot tr td {
+  background-color: #FCF4E5;
+}
+
+/* Form -----------------------------------------------------*/
 
 form.form-horizontal div.form-group label{
     min-width: 100px;
