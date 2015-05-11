@@ -8,7 +8,7 @@ define(['app'], function(app)
         {
             $scope.page =
             {
-                title: 'Welcome'
+                title: 'Welcome to Easy Stitch'
             };
         }
     ]);
