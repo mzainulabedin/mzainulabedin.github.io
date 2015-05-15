@@ -5,16 +5,34 @@ define(['app'], function(app)
 
           var api = {};
           var baseUrl = "http://api-easystich.rhcloud.com/items/";
+          //var baseUrl = "http://localhost:8062/items/";
           var headers = {
               'Content-Type': 'application/json',
               'Accept': 'text/json'
           };
 
           //LIST
-          api.getList = function() {
+          api.getList = function (search, orderBy, pageNumber, pageSize) {
+              var query = "";
+              if (search != null && search != "") {
+                  query = "q=" + search;
+              }
+              if (orderBy != null && orderBy != "") {
+                  if (query != "") query += "&";
+                  query += "o=" + orderBy;
+              }
+              if (pageNumber != null && pageNumber != "") {
+                  if (query != "") query += "&";
+                  query += "p=" + pageNumber;
+              }
+              if (pageSize != null && pageSize != "") {
+                  if (query != "") query += "&";
+                  query += "s=" + pageSize;
+              }
+              if (query != "") query = "?" + query;
               var req = {
                   method: 'GET',
-                  url: baseUrl,
+                  url: baseUrl + query,
                   headers: headers
               }
               return $http(req);

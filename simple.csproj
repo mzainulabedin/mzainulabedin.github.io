@@ -40,6 +40,7 @@
   <ItemGroup>
     <Content Include="404.html" />
     <Content Include="common\data-utils.js" />
+    <Content Include="common\string-utils.js" />
     <Content Include="controllers\itemController.js" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
@@ -97,6 +98,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="README.md" />
+    <Content Include="scripts\angular-animate.min.js.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

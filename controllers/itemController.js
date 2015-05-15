@@ -20,77 +20,83 @@ define(['app'], function (app) {
             }
 
             //GET LIST
-            var getList = function () {
+            var getList = function (search, orderBy, pageNumber) {
                 $scope.isCollapsed = true;
                 $scope.loading = true;
+                
+
                 $scope.predicate = 'name';
                 $scope.reverse = false;
-                $scope.itemPerPage = 4;
 
-                $scope.setPage = function (pageNo) {
-                    $scope.currentPage = pageNo;
+                $scope.pageSize = 5;
+                $scope.pageNumber = pageNumber || 0;
+
+                $scope.search = search || "";
+                $scope.orderBy = orderBy || "";
+
+                //Filter
+                $scope.filter = function () {
+                    getList($scope.search, $scope.orderBy, $scope.pageNumber, $scope.pageSize);
                 };
 
+                //Page 
                 $scope.pageChanged = function () {
-                    var from = 0;
-                    if ($scope.currentPage >= 1)
-                        from = ($scope.currentPage - 1) * $scope.itemPerPage;
-
-                    var to = $scope.itemPerPage;
-                    if ($scope.currentPage * $scope.itemPerPage <= $scope.allItems.length)
-                        to = $scope.currentPage * $scope.itemPerPage;
-                    else
-                        to = $scope.allItems.length;
-
-                    $scope.items = $scope.allItems.slice(from, to);
-                    //$log.log('Page changed to: ' + $scope.currentPage);
+                    getList($scope.search, $scope.orderBy, $scope.pageNumber, $scope.pageSize);
                 };
 
-                service.getList()
-                .success(function (data, status, headers, config) {
-                    $scope.allItems = data;
-                    if ($scope.allItems.length > $scope.itemPerPage) {
-                        $scope.items = $scope.allItems.slice(0, $scope.itemPerPage);
+                //Sort
+                $scope.changeSorting = function ($event, column) {
+                    
+                    if (column != null && column != "") {
+                        var sortColumn = column;
+                        if (sortColumn.indexOf("-") == 0) {
+                            sortColumn = sortColumn.replace(/^-/, '');
+                        }
+                        if ($scope.orderBy == sortColumn) {
+                            if (column.indexOf("-") == 0) {
+                                column = sortColumn;
+                            } else {
+                                column = "-" + column;
+                            }
+                        }
+                        $scope.orderBy = column;
+                        getList($scope.search, $scope.orderBy, $scope.pageNumber, $scope.pageSize);
                     }
-                    $scope.loading = $scope.isCollapsed = false;
-                    $scope.totalItems = $scope.allItems.length;
-                    $scope.currentPage = 1;
+                };
+
+                //Sort Icon
+                $scope.getIcon = function ($event, column) {
+                    var sortDirectionClass = "";
+                    if (column != null && column != "") {
+                        var sortColumn = $scope.orderBy;
+                        if (sortColumn.indexOf("-") == 0) {
+                            sortColumn = sortColumn.replace(/^-/, '');
+                        }
+                        if (column == sortColumn) {
+                            if ($scope.orderBy.indexOf("-") == 0) {
+                                sortDirectionClass = 'glyphicon-chevron-up';
+                            } else {
+                                sortDirectionClass = 'glyphicon-chevron-down';
+                            }
+                        }
+                    }
+                    return sortDirectionClass;
+                }
+
+
+                service.getList($scope.search, $scope.orderBy, $scope.pageNumber, $scope.pageSize)
+                .success(function (data, status, headers, config) {
+                    $scope.items = data.data;
+                    $scope.totalCount = data.total_count;
+                    $scope.pageNumber = data.page_number;
+                    $scope.loading = $scope.isCollapsed = false;                     
                 })
                 .error(function (data, status, headers, config) {
                     setMessage(data, 'error', data.errors);
                     $scope.loading = $scope.isCollapsed = false;
+                    $scope.items = [];
                 });
 
-            }
-            $scope.sort = {
-                active: '',
-                descending: false
-            }
-
-            $scope.changeSorting = function (column) {
-
-                var sort = $scope.sort;
-
-                if (sort.active == column) {
-                    sort.descending = !sort.descending;
-                }
-                else {
-                    sort.active = column;
-                    sort.descending = false;
-                }
-            };
-
-            $scope.getIcon = function (column) {
-
-                var sort = $scope.sort;
-
-                if (sort.active == column) {
-                    return sort.descending
-                      ? 'glyphicon-chevron-up'
-                      : 'glyphicon-chevron-down';
-                }
-
-                return ''; //glyphicon-star
             }
 
 
