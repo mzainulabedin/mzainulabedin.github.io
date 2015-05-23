@@ -1,0 +1,32 @@
+<section ng-controller="supplierController">
+    <h2>{{page.title}}<img src="img/38.gif" ng-show="loading"></h2>
+    <p class="{{message.messageClass}}">{{message.text}}</p>
+    <form name="form" novalidate class="form-horizontal" role="form" ng-submit="update()">
+        <div class="form-group">
+            <label for="txtCode">Code:</label>
+            <input id="txtCode" name="txtCode" type="text" ng-model="supplier.code" required ng-minlength="3" />
+            <span role="alert" class="validation-error" ng-show="form.$submitted || form.txtCode.$touched">
+                <span ng-show="form.txtCode.$error.required">Required!</span>
+                <span ng-show="form.txtCode.$error.minlength">At least 3 charactors</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="txtName">Name:</label>
+            <input id="txtName" name="txtName" type="text" ng-model="supplier.name" required ng-minlength="3" />
+            <span role="alert" class="validation-error" ng-show="form.$submitted || form.txtName.$touched">
+                <span ng-show="form.txtName.$error.required">Required!</span>
+                <span ng-show="form.txtName.$error.minlength">At least 3 charactors</span>
+            </span>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" ng-click="back()">Back</button>
+            <button type="button" class="btn btn-primary" ng-click="delete()">Delete</button>
+            <button type="submit" class="btn btn-primary btn-default"
+                    ng-disabled="form.txtCode.$dirty && form.txtCode.$invalid ||
+                    form.txtName.$dirty && form.txtName.$invalid ||
+                    form.ddltype.$dirty && form.ddltype.$invalid">
+                Save
+            </button>
+        </div>
+    </form>
+</section>

@@ -22,6 +22,20 @@ define([], function ()
                     'services/itemService'
                 ]
             },
+            '/supplier': {
+                templateUrl: '/views/supplier/list.html',
+                controller: 'controllers/supplierController',
+                dependencies: [
+                    'services/supplierService'
+                ]
+            },
+            '/supplier/:id': {
+                templateUrl: '/views/supplier/view.html',
+                controller: 'controllers/supplierController',
+                dependencies: [
+                    'services/supplierService'
+                ]
+            },
             '/about/:person': {
                 templateUrl: '/views/about.html',
                 controller: 'controllers/aboutController'

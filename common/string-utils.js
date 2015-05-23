@@ -21,3 +21,5 @@ if (typeof String.prototype.trimEnd != 'function') {
         return this.replace(str + '$');
     };
 }
+
+

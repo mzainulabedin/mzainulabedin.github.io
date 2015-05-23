@@ -1,12 +1,13 @@
 'use strict';
 define(['app'], function (app) {
-    app.controller('itemController',
+    app.controller('supplierController',
     [
         '$scope',
-        'itemService',
+        'supplierService',
         '$routeParams',
         '$location',
-        function ($scope, service, $routeParams, $location) {
+        '$window',
+        function ($scope, service, $routeParams, $location, $window) {
             $scope.message = {
                 text: '',
                 type: '',
@@ -16,17 +17,13 @@ define(['app'], function (app) {
 
             $scope.page =
             {
-                title: 'Items'
+                title: 'Supplier'
             }
 
             //GET LIST
             var getList = function (search, orderBy, pageNumber) {
                 $scope.isCollapsed = true;
                 $scope.loading = true;
-                
-
-                $scope.predicate = 'name';
-                $scope.reverse = false;
 
                 $scope.pageSize = 5;
                 $scope.pageNumber = pageNumber || 0;
@@ -86,7 +83,7 @@ define(['app'], function (app) {
 
                 service.getList($scope.search, $scope.orderBy, $scope.pageNumber, $scope.pageSize)
                 .success(function (data, status, headers, config) {
-                    $scope.items = data.data;
+                    $scope.suppliers = data.data;
                     $scope.totalCount = data.total_count;
                     $scope.pageNumber = data.page_number;
                     $scope.loading = $scope.isCollapsed = false;                     
@@ -94,7 +91,7 @@ define(['app'], function (app) {
                 .error(function (data, status, headers, config) {
                     setMessage(data, 'error', data.errors);
                     $scope.loading = $scope.isCollapsed = false;
-                    $scope.items = [];
+                    $scope.suppliers = [];
                 });
 
             }
@@ -106,7 +103,7 @@ define(['app'], function (app) {
                     $scope.loading = true;
                     service.get(id)
                     .success(function (data, status, headers, config) {
-                        $scope.item = data;
+                        $scope.supplier = data;
                         $scope.loading = false;
                     })
                     .error(function (data, status, headers, config) {
@@ -121,28 +118,25 @@ define(['app'], function (app) {
                 var action;
                 if ($scope.form.$valid) {
                     if ($routeParams.id == 'new') {
-                        action = service.insert($scope.item);
+                        action = service.insert($scope.supplier);
                     } else {
-                        action = service.update($routeParams.id, $scope.item);
+                        action = service.update($routeParams.id, $scope.supplier);
                     }
                 }
 
                 if (action) {
                     $scope.loading = true;
                     action.success(function (data, status, headers, config) {
-                        if (data.errors) {
+                        if (data.message) {
                             setMessage(data.message, 'error', data.errors);
                         } else {
                             setMessage('Saved successfully', 'success', null);
-                            $location.url('/item/' + data._id);
+                            $location.url('/supplier/' + data._id);
                         }
                         $scope.loading = false;
                     })
                     .error(function (data, status, headers, config) {
-                        if (data)
-                            setMessage(data, 'error', data.errors);
-                        else
-                            setMessage('unknow error occured', 'error', null);
+                        setMessage(data, 'error', data.errors);
                         $scope.loading = false;
                     });
                 }
@@ -151,13 +145,13 @@ define(['app'], function (app) {
             //DELETE
             var deleteRecord = function () {
                 var action;
-                action = service.delete($routeParams.id, $scope.item)
+                action = service.delete($routeParams.id, $scope.supplier)
                 .success(function (data, status, headers, config) {
                     if (data!=null && data.message!=null) {
                         setMessage(data.message, 'error', data.errors);
                     } else {
                         setMessage('Deleted successfully', 'success', null);
-                        $location.url('/item/');
+                        $location.url('/supplier/');
                     }
                 })
                 .error(function (data, status, headers, config) {
@@ -174,6 +168,9 @@ define(['app'], function (app) {
                     messageClass: type == 'error' ? 'alert alert-danger' : (type == 'success' ? 'alert alert-success' : ''),
                     errors: errors
                 };
+            }
+            $scope.back = function () {
+                $window.history.back();
             }
             
 

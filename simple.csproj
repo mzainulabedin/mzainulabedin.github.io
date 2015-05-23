@@ -41,7 +41,10 @@
     <Content Include="404.html" />
     <Content Include="common\data-utils.js" />
     <Content Include="common\string-utils.js" />
+    <Content Include="controllers\supplierController.js" />
     <Content Include="controllers\itemController.js" />
+    <Content Include="css\app-theme-lte.css" />
+    <Content Include="css\app-theme-black.css" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -77,10 +80,13 @@
     <Content Include="services\dependencyResolverFor.js" />
     <Content Include="css\app.css" />
     <Content Include="css\sticky-footer.css" />
+    <Content Include="services\supplierService.js" />
     <Content Include="services\itemService.js" />
     <Content Include="views\about.html" />
     <Content Include="views\contact.html" />
     <Content Include="views\home.html" />
+    <Content Include="views\supplier\list.html" />
+    <Content Include="views\supplier\view.html" />
     <Content Include="views\item\view.html" />
     <Content Include="views\item\list.html" />
     <Content Include="Web.config">
