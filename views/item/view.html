@@ -49,14 +49,18 @@
                 </span>
             </div>
             <div class="form-group">
-                <label for="txtSupplier">Supplier:</label>
-                <input id="txtSupplier" name="txtSupplier" type="text" class="form-control" ng-model="item.supplier" />
+                <label for="ddlSupplier">Supplier:</label>
+                <select id="ddlSupplier" name="ddlSupplier" class="form-control" ng-model="item.supplier"
+                        ng-options="supplier.code as supplier.name for supplier in suppliers">
+                    <option value="">[Please Select]</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="txtColor">Color:</label>
                 <input id="txtColor" name="txtColor" type="text" class="form-control" ng-model="item.color" />
             </div>
             <div>
+                <button type="button" class="btn btn-default" ng-click="back()">Back</button>
                 <button type="button" class="btn btn-default" ng-click="delete()">Delete</button>
                 <button type="submit" class="btn btn-primary "
                         ng-disabled="form.txtCode.$dirty && form.txtCode.$invalid ||

@@ -6,7 +6,8 @@ define(['app'], function (app) {
         'itemService',
         '$routeParams',
         '$location',
-        function ($scope, service, $routeParams, $location) {
+        '$window',
+        function ($scope, service, $routeParams, $location, $window) {
             $scope.message = {
                 text: '',
                 type: '',
@@ -102,8 +103,24 @@ define(['app'], function (app) {
 
             //GET
             var get = function (id) {
+                $scope.loading = true;
+
+                $scope.suppliers = [{ code: '', name: '[Please Select]' }];
+                service.getSuppliers()
+                 .success(function (data, status, headers, config) {
+                     $scope.suppliers = data.data;
+                     $scope.suppliers.push({ code: '', name: '[Please Select]' });
+                     if (id == null) {
+                         $scope.item = { suppler: '' };
+                         $scope.loading = false;
+                     }
+                 })
+                 .error(function (data, status, headers, config) {
+                     setMessage(data, 'error', data.errors);
+                     if (id == null) $scope.loading = false;
+                 });
+
                 if (id != null) {
-                    $scope.loading = true;
                     service.get(id)
                     .success(function (data, status, headers, config) {
                         $scope.item = data;
@@ -113,6 +130,8 @@ define(['app'], function (app) {
                         setMessage(data, 'error', data.errors);
                         $scope.loading = false;
                     });
+                } else {
+                    $scope.item = {suppler:''};
                 }
             }
 
@@ -165,6 +184,10 @@ define(['app'], function (app) {
                 });
             }
 
+            var getSuppliers = function () {
+                
+            }
+
             //TODO: move it to some util class
             //private methods
             var setMessage = function (message, type, errors) {
@@ -174,6 +197,9 @@ define(['app'], function (app) {
                     messageClass: type == 'error' ? 'alert alert-danger' : (type == 'success' ? 'alert alert-success' : ''),
                     errors: errors
                 };
+            }
+            $scope.back = function () {
+                $window.history.back();
             }
             
 

@@ -6,7 +6,7 @@ define([], function ()
         routes: {
             '/': {
                 templateUrl: '/views/home.html',
-				controller: 'controllers/homeController'
+                controller: 'controllers/homeController'
             },
             '/item': {
                 templateUrl: '/views/item/list.html',

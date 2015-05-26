@@ -6,15 +6,21 @@ require.config({
 		'angular-route': '/scripts/angular-route',
 		'ui-bootstrap': '/scripts/ui-bootstrap-tpls-0.13.0.min',
 		'angular-animate': '/scripts/angular-animate.min',
+
+		'chart': '/scripts/chart',
+		'angular-chart': '/scripts/angular-chart',
+		
 		'data-utils': '/common/data-utils',
-		'string-utils':'/common/string-utils',
+		'string-utils': '/common/string-utils',
+
         'app': '/config/app',
         'routes': '/config/routes'
     },
 	shim: {
 		'app': {
-		    deps: ['angular', 'angular-route', 'ui-bootstrap', 'angular-animate', 'data-utils', 'string-utils']
+		    deps: ['angular', 'angular-route', 'ui-bootstrap', 'data-utils', 'string-utils', 'angular-chart']
 		},
+		
 		'angular-route': {
 			deps: ['angular']
 		},
@@ -23,6 +29,9 @@ require.config({
 		},
 		'angular-animate': {
 		    deps: ['angular']
+		},
+		'angular-chart': {
+		    deps: ['angular', 'chart']
 		}
 	}
 });
@@ -32,6 +41,6 @@ require
     ['app'],
     function(app)
     {
-        angular.bootstrap(document, ['ngAnimate', 'ui.bootstrap', 'app']);
+        angular.bootstrap(document, ['ngAnimate', 'ui.bootstrap', 'chart.js', 'app']);
     }
 );

@@ -43,6 +43,7 @@
     <Content Include="common\string-utils.js" />
     <Content Include="controllers\supplierController.js" />
     <Content Include="controllers\itemController.js" />
+    <Content Include="css\angular-chart.css" />
     <Content Include="css\app-theme-lte.css" />
     <Content Include="css\app-theme-black.css" />
     <Content Include="css\bootstrap-theme.css" />
@@ -52,8 +53,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="img\38.gif" />
     <Content Include="scripts\angular-animate.min.js" />
+    <Content Include="scripts\angular-chart.js" />
+    <Content Include="scripts\angular-chart.min.js" />
     <Content Include="scripts\angular-loader.min.js" />
     <Content Include="scripts\angular-touch.min.js" />
+    <Content Include="scripts\chart.js" />
+    <Content Include="scripts\chart.min.js" />
     <Content Include="scripts\ui-bootstrap-tpls-0.13.0.js" />
     <Content Include="index.html" />
     <Content Include="css\bootstrap-responsive.min.css" />
@@ -102,9 +107,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="css\angular-chart.css.map" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="README.md" />
     <Content Include="scripts\angular-animate.min.js.map" />
+    <Content Include="scripts\angular-chart.min.js.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

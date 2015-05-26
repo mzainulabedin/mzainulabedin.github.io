@@ -261,3 +261,11 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+
+
+ 
+/* Custom Colored message text */
+.validation-error {
+    color:red;
+    font-weight:bold;
+}

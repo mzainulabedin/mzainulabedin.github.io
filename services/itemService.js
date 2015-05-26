@@ -81,6 +81,17 @@ define(['app'], function(app)
               return $http(req);
           }
 
+        //SUPPLIERS
+          api.getSuppliers = function () {
+              var query = "?o=name";
+              var req = {
+                  method: 'GET',
+                  url: "http://api-easystich.rhcloud.com/suppliers/" + query,
+                  headers: headers
+              }
+              return $http(req);
+          }
+
 
           return api;
       });

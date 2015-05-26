@@ -186,6 +186,7 @@ define(['app'], function (app) {
             }
 
             //public method
+            $scope.getList = getList;
             $scope.update = update;
             $scope.delete = deleteRecord;
         }
