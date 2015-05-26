@@ -51,44 +51,17 @@ body {
 }
 
 /* Top Navigation */
-@media(min-width:768px) {
-    .navbar-header {
-        width: 225px;
-        background: rgb(3,76,150); /* Old browsers */
-        background: -moz-linear-gradient(left, rgba(3,76,150,1) 0%, rgba(51,122,183,1) 59%, rgba(51,122,183,1) 100%); /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(3,76,150,1)), color-stop(59%,rgba(51,122,183,1)), color-stop(100%,rgba(51,122,183,1))); /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(left, rgba(3,76,150,1) 0%,rgba(51,122,183,1) 59%,rgba(51,122,183,1) 100%); /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(left, rgba(3,76,150,1) 0%,rgba(51,122,183,1) 59%,rgba(51,122,183,1) 100%); /* Opera 11.10+ */
-        background: -ms-linear-gradient(left, rgba(3,76,150,1) 0%,rgba(51,122,183,1) 59%,rgba(51,122,183,1) 100%); /* IE10+ */
-        background: linear-gradient(to right, rgba(3,76,150,1) 0%,rgba(51,122,183,1) 59%,rgba(51,122,183,1) 100%); /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#034c96', endColorstr='#337ab7',GradientType=1 ); /* IE6-9 */
-    }
-}
-
-.navbar-inverse .navbar-nav>li>a{
-    color: #FFF;
-}
-
-.nav>li>a:focus, .nav>li>a:hover{
-      background-color: #0E4879;
-}
-.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
-     background-color: #0E4879;
-}
 
 .navbar-inverse {
-  background-color: #337AB7;
-  border-color: #214D73;
-
-  -webkit-box-shadow: 0px 4px 4px 0px rgba(97,96,97,1);
-  -moz-box-shadow: 0px 4px 4px 0px rgba(97,96,97,1);
-  box-shadow: 0px 4px 4px 0px rgba(97,96,97,1);
+  background-color: #F5F5F5;
+  border-color: #F4F4F4;
 }
 .navbar-brand {
-  color: #FFF!important;
+  color: #4C4C4C!important;
+  font-weight:bold;
 }
 .navbar-brand:hover {
-  color: #FFF!important;
+  color: #2d5e6d!important;
 }
 
 @media (max-width: 979px) {
@@ -116,7 +89,7 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
     line-height: 20px;
-    color: #FFF;
+    color: #999;
 }
 
 .top-nav>li>a:hover,
@@ -125,7 +98,7 @@ body {
 .top-nav>.open>a:hover,
 .top-nav>.open>a:focus {
     color: #fff;
-    background-color: ##8B2672;
+    background-color: #99B3B5;
 }
 
 .top-nav>.open>.dropdown-menu {
@@ -181,20 +154,10 @@ ul.alert-dropdown {
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: #337AB7;
+        background-color: #F5F5F5;
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
-
-
-        background: rgb(3,76,150); /* Old browsers */
-        background: -moz-linear-gradient(left, rgba(3,76,150,1) 0%, rgba(51,122,183,1) 59%, rgba(51,122,183,1) 100%); /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(3,76,150,1)), color-stop(59%,rgba(51,122,183,1)), color-stop(100%,rgba(51,122,183,1))); /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(left, rgba(3,76,150,1) 0%,rgba(51,122,183,1) 59%,rgba(51,122,183,1) 100%); /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(left, rgba(3,76,150,1) 0%,rgba(51,122,183,1) 59%,rgba(51,122,183,1) 100%); /* Opera 11.10+ */
-        background: -ms-linear-gradient(left, rgba(3,76,150,1) 0%,rgba(51,122,183,1) 59%,rgba(51,122,183,1) 100%); /* IE10+ */
-        background: linear-gradient(to right, rgba(3,76,150,1) 0%,rgba(51,122,183,1) 59%,rgba(51,122,183,1) 100%); /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#034c96', endColorstr='#337ab7',GradientType=1 ); /* IE6-9 */
     }
 
     .side-nav>li>a {
@@ -204,7 +167,7 @@ ul.alert-dropdown {
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
-        background-color: #034C96 !important;
+        background-color: #99B3B5 !important;
     }
 }
 
@@ -216,7 +179,7 @@ ul.alert-dropdown {
     display: block;
     padding: 10px 15px 10px 38px;
     text-decoration: none;
-    color: #FFF;
+    color: #999;
 }
 
 .side-nav>li>ul>li>a:hover {
@@ -305,11 +268,4 @@ ul.alert-dropdown {
 .validation-error {
     color:red;
     font-weight:bold;
-}
-
-
-.panel-default>.panel-heading {
-    color: #FFF;
-  background-color: #337AB7;
-  border-color: #FFF;
 }
