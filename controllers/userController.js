@@ -1,9 +1,9 @@
 'use strict';
 define(['app'], function (app) {
-    app.controller('supplierController',
+    app.controller('userController',
     [
         '$scope',
-        'supplierService',
+        'userService',
         '$routeParams',
         '$location',
         '$window',
@@ -17,7 +17,7 @@ define(['app'], function (app) {
 
             $scope.page =
             {
-                title: 'Supplier'
+                title: 'User'
             }
 
             //GET LIST
@@ -57,7 +57,7 @@ define(['app'], function (app) {
 
                 service.getList($scope.search, $scope.orderBy, $scope.pageNumber, $scope.pageSize)
                 .success(function (data, status, headers, config) {
-                    $scope.suppliers = data.data;
+                    $scope.users = data.data;
                     $scope.totalCount = data.total_count;
                     $scope.pageNumber = data.page_number;
                     $scope.loading = $scope.isCollapsed = false;                     
@@ -65,7 +65,7 @@ define(['app'], function (app) {
                 .error(function (data, status, headers, config) {
                     setMessage(data, 'error', data.errors);
                     $scope.loading = $scope.isCollapsed = false;
-                    $scope.suppliers = [];
+                    $scope.users = [];
                 });
 
             }
@@ -77,13 +77,16 @@ define(['app'], function (app) {
                     $scope.loading = true;
                     service.get(id)
                     .success(function (data, status, headers, config) {
-                        $scope.supplier = data;
+                        $scope.user = data;
+                        $scope.user.confirm_password = $scope.user.password
                         $scope.loading = false;
                     })
                     .error(function (data, status, headers, config) {
                         setMessage(data, 'error', data.errors);
                         $scope.loading = false;
                     });
+                } else {
+                    $scope.user = { is_active: true }
                 }
             }
 
@@ -92,9 +95,9 @@ define(['app'], function (app) {
                 var action;
                 if ($scope.form.$valid) {
                     if ($routeParams.id == 'new') {
-                        action = service.insert($scope.supplier);
+                        action = service.insert($scope.user);
                     } else {
-                        action = service.update($routeParams.id, $scope.supplier);
+                        action = service.update($routeParams.id, $scope.user);
                     }
                 }
 
@@ -105,7 +108,7 @@ define(['app'], function (app) {
                             setMessage(data.message, 'error', data.errors);
                         } else {
                             setMessage('Saved successfully', 'success', null);
-                            $location.url('/supplier/' + data._id);
+                            $location.url('/user/' + data._id);
                         }
                         $scope.loading = false;
                     })
@@ -119,13 +122,13 @@ define(['app'], function (app) {
             //DELETE
             var deleteRecord = function () {
                 var action;
-                action = service.delete($routeParams.id, $scope.supplier)
+                action = service.delete($routeParams.id, $scope.user)
                 .success(function (data, status, headers, config) {
                     if (data!=null && data.message!=null) {
                         setMessage(data.message, 'error', data.errors);
                     } else {
                         setMessage('Deleted successfully', 'success', null);
-                        $location.url('/supplier/');
+                        $location.url('/user/');
                     }
                 })
                 .error(function (data, status, headers, config) {

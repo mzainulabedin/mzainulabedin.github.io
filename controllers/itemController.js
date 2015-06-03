@@ -1,13 +1,13 @@
 'use strict';
 define(['app'], function (app) {
-    app.controller('itemController',
-    [
+    app.controller('itemController', [
         '$scope',
         'itemService',
         '$routeParams',
         '$location',
         '$window',
         function ($scope, service, $routeParams, $location, $window) {
+
             $scope.message = {
                 text: '',
                 type: '',
@@ -47,41 +47,15 @@ define(['app'], function (app) {
 
                 //Sort
                 $scope.changeSorting = function ($event, column) {
-                    
                     if (column != null && column != "") {
-                        var sortColumn = column;
-                        if (sortColumn.indexOf("-") == 0) {
-                            sortColumn = sortColumn.replace(/^-/, '');
-                        }
-                        if ($scope.orderBy == sortColumn) {
-                            if (column.indexOf("-") == 0) {
-                                column = sortColumn;
-                            } else {
-                                column = "-" + column;
-                            }
-                        }
-                        $scope.orderBy = column;
+                        $scope.orderBy = EasyStitch.Common.Data.changeSorting(column, $scope.orderBy);
                         getList($scope.search, $scope.orderBy, $scope.pageNumber, $scope.pageSize);
                     }
                 };
 
                 //Sort Icon
                 $scope.getIcon = function ($event, column) {
-                    var sortDirectionClass = "";
-                    if (column != null && column != "") {
-                        var sortColumn = $scope.orderBy;
-                        if (sortColumn.indexOf("-") == 0) {
-                            sortColumn = sortColumn.replace(/^-/, '');
-                        }
-                        if (column == sortColumn) {
-                            if ($scope.orderBy.indexOf("-") == 0) {
-                                sortDirectionClass = 'glyphicon-chevron-up';
-                            } else {
-                                sortDirectionClass = 'glyphicon-chevron-down';
-                            }
-                        }
-                    }
-                    return sortDirectionClass;
+                    return EasyStitch.Common.Data.getIcon(column, $scope.orderBy);
                 }
 
 
@@ -109,7 +83,6 @@ define(['app'], function (app) {
                 service.getSuppliers()
                  .success(function (data, status, headers, config) {
                      $scope.suppliers = data.data;
-                     $scope.suppliers.push({ code: '', name: '[Please Select]' });
                      if (id == null) {
                          $scope.item = { suppler: '' };
                          $scope.loading = false;

@@ -36,6 +36,21 @@ define([], function ()
                     'services/supplierService'
                 ]
             },
+            '/user': {
+                templateUrl: '/views/user/list.html',
+                controller: 'controllers/userController',
+                dependencies: [
+                    'services/userService'
+                ]
+            },
+            '/user/:id': {
+                templateUrl: '/views/user/view.html',
+                controller: 'controllers/userController',
+                dependencies: [
+                    'services/userService',
+                    'directives/compare-to'
+                ]
+            },
             '/about/:person': {
                 templateUrl: '/views/about.html',
                 controller: 'controllers/aboutController'

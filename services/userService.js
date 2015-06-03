@@ -1,10 +1,10 @@
 ﻿
 define(['app'], function(app)
 {
-    app.service('supplierService', function ($http) {
+    app.service('userService', function ($http) {
 
           var api = {};
-          var baseUrl = global.serviceUrl + "/suppliers/";
+          var baseUrl = global.serviceUrl + "/users/";
           var headers = {
               'Content-Type': 'application/json',
               'Accept': 'text/json'

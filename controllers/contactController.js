@@ -1,14 +1,10 @@
-define(['app'], function(app)
-{
-    app.controller('contactController',
-    [
+'use strict';
+define(['app'], function (app) {
+    app.controller('contactController', [
         '$scope',
-
-        function($scope)
-        {
-            $scope.page =
-            {
-                title: 'Contact Us'
+        function ($scope) {
+            $scope.page = {
+                title: "Contacts"
             };
         }
     ]);

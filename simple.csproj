@@ -40,15 +40,20 @@
   <ItemGroup>
     <Content Include="404.html" />
     <Content Include="common\data-utils.js" />
+    <Content Include="common\global.js" />
     <Content Include="common\string-utils.js" />
+    <Content Include="config\settings.js" />
+    <Content Include="controllers\userController.js" />
     <Content Include="controllers\supplierController.js" />
     <Content Include="controllers\itemController.js" />
     <Content Include="css\angular-chart.css" />
+    <Content Include="css\app-theme-lte1.css" />
     <Content Include="css\app-theme-lte.css" />
     <Content Include="css\app-theme-black.css" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="directives\compare-to.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="img\38.gif" />
@@ -85,11 +90,14 @@
     <Content Include="services\dependencyResolverFor.js" />
     <Content Include="css\app.css" />
     <Content Include="css\sticky-footer.css" />
+    <Content Include="services\userService.js" />
     <Content Include="services\supplierService.js" />
     <Content Include="services\itemService.js" />
     <Content Include="views\about.html" />
     <Content Include="views\contact.html" />
     <Content Include="views\home.html" />
+    <Content Include="views\user\list.html" />
+    <Content Include="views\user\view.html" />
     <Content Include="views\supplier\list.html" />
     <Content Include="views\supplier\view.html" />
     <Content Include="views\item\view.html" />

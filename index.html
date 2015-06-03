@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +11,10 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="/css/app.css" />
-    <link rel="stylesheet" href="/css/angular-chart.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/angular-chart.css" />
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -70,6 +70,14 @@
                             <li><a href="/supplier"><span class="fa fa-fw fa-user"></span>Suppliers</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="" ng-init="navSecurityCollapsed = true" ng-click="navSecurityCollapsed = !navSecurityCollapsed">
+                            <span class="fa fa-fw fa-cubes"></span>Security <span class="caret"></span>
+                        </a>
+                        <ul class="collapse" role="menu" collapse="navSecurityCollapsed">
+                            <li><a href="/user"><span class="fa fa-fw fa-tags"></span>Users</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/about/me"><span class="fa fa-fw fa-info"></span>About</a></li>
                     <li><a href="/contact"><span class="fa fa-fw fa-envelope"></span>Contact</a></li>
                 </ul>
@@ -87,6 +95,6 @@
     <!-- /#wrapper -->
 
     <!-- Scripts -->
-    <script type="text/javascript" src="/scripts/require.js" data-main="config/config.js"></script>
+    <script type="text/javascript" src="scripts/require.js" data-main="config/config.js"></script>
 </body>
 </html>

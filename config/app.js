@@ -19,6 +19,7 @@ define(['routes', '../services/dependencyResolverFor'], function (config, depend
 	        app.filter     = $filterProvider.register;
 	        app.factory    = $provide.factory;
 	        app.service    = $provide.service;
+	        app.constant   = $provide.constant;
 
             $locationProvider.html5Mode(true);
 

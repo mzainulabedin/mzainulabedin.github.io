@@ -12,13 +12,15 @@ require.config({
 		
 		'data-utils': '/common/data-utils',
 		'string-utils': '/common/string-utils',
+		'global': '/common/global',
 
         'app': '/config/app',
         'routes': '/config/routes'
+        
     },
 	shim: {
 		'app': {
-		    deps: ['angular', 'angular-route', 'ui-bootstrap', 'data-utils', 'string-utils', 'angular-chart']
+		    deps: ['angular', 'angular-route', 'ui-bootstrap', 'global', 'data-utils', 'string-utils', 'angular-chart']
 		},
 		
 		'angular-route': {
